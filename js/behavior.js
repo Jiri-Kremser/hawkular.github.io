@@ -1,43 +1,34 @@
 $(document).ready(function(){
-  $('.sidebar > .nav').affix({
-    offset: {
-      top: 207,
-      bottom: function () {
-        return (this.bottom = $('.footer').outerHeight(true))
+  if (!!$('#toc').offset()) {
+    var topOffset = 100;
+    var stickyTop = $('#toc').offset().top - topOffset ; 
+    $(window).scroll(function(){ 
+      var windowTop = $(window).scrollTop(); 
+ 
+      if (stickyTop < windowTop) {
+        $('#toc').css({ position: 'fixed', top: topOffset + 40 });
+      } else {
+        $('#toc').css('position','static');
       }
-    }
-  });
+    });
+  }
+  
+  /* adjusting the ToC (parent selectors cannot be done in plain CSS3) */
+  $('#preamble:has(.sectionbody:has(#toc)) ~ div')
+    .css('float', 'right')
+    .css('width', '940px');
+  /* http://stackoverflow.com/a/11842865/1594980 */
+  $('#preamble:has(.sectionbody:has(#toc)) ~ div h1,h2,h3,h4,h5,h6')
+    .css('padding-top', '70px', 'important')
+    .css('margin-top', '-70px', 'important');
 
-  $('body').scrollspy({ target: '.sidebar' });
-  var gui = new dat.GUI({ autoPlace: false });
-  var customContainer = document.getElementById('datGui');
-  customContainer.appendChild(gui.domElement);
-  gui.width = 550;
+  $('#preamble:has(.sectionbody:has(#toc))')
+    .css('float', 'left')
+    .css('padding-top', '40px')
+    .css('float', 'left')
+    .css('margin-right', '5px');
 
-    var params = {
-      "largeText" : 'The Open Source Monitoring and Management Platform',
-      "largeTextSize" : 60,
-      "defaultColor" : '#428bca',
-      "fooColor" : '#428bca',
-      "enableHovering" : true
-    }
-
-  gui.add(params, 'largeText', 12, 90).onChange(function(value){
-    $('#largeText').text(value);
-  });
-
-  gui.add(params, 'largeTextSize').onChange(function(value){
-    $('#largeText').css('font-size', (value + 'px'));
-  });
-
-  var colors = gui.addFolder('Colors');
-  colors.addColor(params, 'defaultColor').onChange(function(value){
-    document.styleSheets[5].cssRules[1132].style.setProperty('color', value, null);
-    document.styleSheets[5].cssRules[1115].style.setProperty('color', value, null);
-    document.styleSheets[5].cssRules[1120].style.setProperty('background', value, null);
-//    [1132].color= #428bca   //6496
-//    [1120].cssText = "background: #428bca" //6421
-  });
-  colors.open();
-  gui.close();
+  /* adding the nav class to ToC for scrollspy */
+  $('#toc > ul:first-of-type').addClass('nav');
 });
+

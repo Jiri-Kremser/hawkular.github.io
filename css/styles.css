@@ -1379,9 +1379,24 @@ pre code {
   padding-left: 15px;
   padding-right: 15px;
 }
+.blog-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+.blog-mainbanner {
+  text-align: center;
+}
 @media (min-width: 768px) {
   .container {
     width: 750px;
+  }
+  .blog-container {
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 @media (min-width: 992px) {
@@ -1389,11 +1404,28 @@ pre code {
     width: 970px;
   }
 }
+
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 1250px;
+  }
+  .blog-container {
+    padding-left: 135px;
+    padding-right: 135px;
+  }
+
+}
+
+@media (min-width: 1500px) {
+  .container {
+    width: 1250px;
+  }
+  .blog-container {
+    padding-left: 300px;
+    padding-right: 300px;
   }
 }
+
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
@@ -3631,6 +3663,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   position: relative;
   display: block;
   padding: 10px 15px;
+}
+#toc .nav > li > a {
+  padding: 0px 0px;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -6400,8 +6435,11 @@ table {
 .nav li.active > a {
   color: #428bca;
 }
+.nav > li.active > a {
+  border-right: 3px solid #428bca;
+}
 .navbar-brand {
-  background: url(../img/logo.svg) no-repeat 15px center;
+  background: url(../img/hawk_50x50.png) no-repeat 15px center;
   text-indent: -999999px;
   margin-top: 8px;
   margin-right: 10px;
@@ -6748,23 +6786,23 @@ table {
   font-weight: 400;
 }
 @media (min-width: 992px) {
-  .sidebar {
+  #sidebar {
     margin-top: 6px;
   }
 }
 @media (min-width: 1200px) {
-  .sidebar .affix {
+  #preamble .affix {
     top: 95px;
-    width: calc(1170px/4 - 30px);
+    width: calc(1270px/4 - 30px);
   }
 }
 @media (max-width: 1199px) {
-  .sidebar .affix {
+  #preamble .affix {
     top: 95px;
     width: calc(970px/4 - 30px);
   }
 }
-.sidebar > .nav > li > .nav {
+#preamble > .nav > li > .nav {
   display: none;
 }
 .sidebar > .nav > li.active > .nav {
@@ -6900,7 +6938,7 @@ table {
   text-align: center;
 }
 .blog .main-banner h1 {
-  background: url(../img/logo.svg) no-repeat center top;
+  background: url(../img/hawk_50x50.png) no-repeat center top;
   background-size: 100px 100px;
   padding-top: 105px;
 }
@@ -6989,31 +7027,146 @@ table {
   color: #31708f;
   margin-bottom: 10px;
 }
-.note h4 {
+
+.tip {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #ecf2da;
+  border-color: #c0eab0;
+  color: #3c763d;
+  margin-bottom: 10px;
+}
+
+.warning {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #fdf8e3;
+  border-color: #fbe4c5;
+  color: #8b6d3b;
+  margin-bottom: 10px;
+}
+
+.caution {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #fae8d3;
+  border-color: #fcd0b0;
+  color: #ac5b19;
+  margin-bottom: 10px;
+}
+
+.important {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+  margin-bottom: 10px;
+}
+
+.note h4,
+.tip h4,
+.warning h4,
+.caution h4,
+.important h4 {
   margin-top: 0;
   color: inherit;
 }
-.note .alert-link {
+.note .alert-link,
+.tip .alert-link,
+.warning .alert-link,
+.caution .alert-link,
+.important .alert-link {
   font-weight: bold;
 }
 .note > p,
-.note > ul {
+.note > ul,
+.tip > p,
+.tip > ul,
+.warning > p,
+.warning > ul,
+.caution > p,
+.caution > ul,
+.important > p,
+.important > ul {
   margin-bottom: 0;
 }
-.note > p + p {
+.note > p + p,
+.tip > p + p,
+.warning > p + p,
+.caution > p + p,
+.important > p + p {
   margin-top: 5px;
 }
+
 .note hr {
-  border-top-color: #a6e1ec;
+  border-top-color: #bce8f1;
 }
-.note .alert-link {
-  color: #245269;
+.note > table td.content {
+  border-left: 1px solid #bce8f1; 
 }
 .note .fa {
-  font-size: 16px;
+  font-size: 20px;
   color: #31708f;
   margin-right: 10px;
 }
+
+.tip hr {
+  border-top-color: #c0eab0;
+}
+.tip > table td.content {
+  border-left: 1px solid #c0eab0; 
+}
+.tip .fa {
+  font-size: 20px;
+  color: #3c763d;
+  margin-right: 10px;
+}
+
+.warning hr {
+  border-top-color: #fbe4c5;
+}
+.warning > table td.content {
+  border-left: 1px solid #fbe4c5; 
+}
+.warning .fa {
+  font-size: 20px;
+  color: #8b6d3b;
+  margin-right: 10px;
+}
+
+.caution hr {
+  border-top-color: #fcd0b0;
+}
+.caution > table td.content {
+  border-left: 1px solid #fcd0b0; 
+}
+.caution .fa {
+  font-size: 20px;
+  color: #ac5b19;
+  margin-right: 10px;
+}
+
+.important hr {
+  border-top-color: #ebccd1;
+}
+.important > table td.content {
+  border-left: 1px solid #ebccd1; 
+}
+.important .fa {
+  font-size: 20px;
+  color: #a94442;
+  margin-right: 10px;
+}
+
 .admonitionblock td.icon .icon-note:before {
   content: "\f05a";
 }
@@ -7088,5 +7241,89 @@ table.tableblock > tbody > tr:nth-child(odd) {
 ::-moz-selection {
   background: #e1eef4;
 }
-#datGui { position: absolute; top: 2px; left: 2px }
-.c > .selector { padding: 0px !important;}
+
+/* ----- fork on github banner ----- */
+#forkongithubp {
+  text-align: center;
+}
+
+#forkongithub a {
+  color:#428bca;
+}
+.bg-grey { background-color: #333 !important; }
+#forkongithub a::before, #forkongithub a::after {
+  content:""; width:100%; display:block; position:absolute;
+  top:1px; left:0; height:1px; background:#fff;
+}
+#forkongithub a::after { bottom:1px; top:auto; }
+
+@media screen and (min-width:992px) {
+  #forkongithub {
+    position:fixed;
+    display:block;
+    top:0;
+    right:0;
+    width:200px;
+    overflow:hidden;
+    height:200px;
+    z-index:9999;
+  }
+  #forkongithub a {
+    color:#fff;
+    text-decoration:none;
+    font-family:arial,sans-serif;
+    text-align:center;
+    font-weight:700;
+    font-size:1.5rem;
+    line-height:3rem;
+    padding:5px 40px;
+    width:200px;
+    position:absolute;
+    top:50px;
+    right:-75px;
+    transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    box-shadow:4px 4px 10px rgba(0,0,0,0.8);
+    box-sizing: content-box;
+  }
+  .bg-grey { background-color: #444 !important; }
+}
+
+
+#toc {
+  border: 0;
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  #toc {
+    display: block;
+  }
+}
+
+#toc ul {
+  text-transform: none;
+  white-space: nowrap;
+  padding-left: 5px;
+  line-height: 2.5;
+}
+
+#toc .nav li a {
+  padding-right : 5px;
+}
+
+#toc ul.sectlevel1 {
+  text-transform: uppercase;
+}
+
+/* red hat tabzilla */
+.dropup {
+  right: 180px;
+}
+
+#toctitle { 
+  visibility: hidden; 
+}

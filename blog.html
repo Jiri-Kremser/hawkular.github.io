@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Hawkular - Downloads</title>
+    <title>Hawkular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -99,28 +99,121 @@
       </div>
     </nav>
 
-      <section class="main-banner">
-        <div class="container">
-          <h1>Downloads</h1>
-          <p>Downloads for Hawkular</p>
-        </div>
-      </section>
 
-	<!--<p><em>04 February 2015</em></p>-->
+<section class="main-banner blog-mainbanner">
+    <div class="container">
+        <h1>Hawkular Blog</h1>
+    </div>
+</section>
 
-	<section>
-      <div class="container">
-        <div class="sect1">
-<h2 id="_downloads">Downloads</h2>
+
+<div class="blog-container">
+            <a href="blog/2015/2015-02-24-1.html"><h1>The Kettle starts boiling</h1></a>
+            <p>24 February 2015</p>
+            <p><div class="paragraph">
+<p>We have been working hard the last weeks to integrate the individual pieces of hawkular into some <em>good old
+distribution</em>, basically a thingy you can check out, unzip and run. And here it is, the <em>Kettle</em></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/img/Kettle.png" alt="Kettle">
+</div>
+</div>
+<div class="paragraph">
+<p>To build the Kettle you basically checkout the Hawkular main repository and run <code>mvn install</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">git clone https://github.com/hawkular/hawkular.git
+cd hawkular
+mvn install -Pdev -Dlicense.skip
+cd kettle/target
+cd wildfly-8.2.0.Final
+bin/standalone.sh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can then point your web browser at <a href="http://localhost:8080/" class="bare">http://localhost:8080/</a> and use Hawkular.</p>
+</div></p>
+            <br />
+            <hr /><br />
+            <br />
+            <a href="blog/2015/2015-02-16-1.html"><h1>Hawkular-Metrics 0.2.7 release</h1></a>
+            <p>16 February 2015</p>
+            <p><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<div class="title">NOTE</div>
-<p>Hawkular did not have any formal releases yet. Stay tuned.</p>
+<p>Hawkular-metrics has published under its old name <em>rhq-metrics</em> its version 0.2.7 release.
+From Stefans announcement:</p>
+</div>
+<div class="paragraph">
+<p>I want to summarize the latest release of the RHQ Metrics project and the future of the project.</p>
 </div>
 </div>
 </div>
-      </div>
-    </section>
+<div class="sect1">
+<h2 id="rhq_metrics_migrates_to_hawkular_organization">RHQ Metrics migrates to Hawkular organization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Release 0.2.7 of the RHQ Metrics is the last one from the current repository. But do not panic! Beyond the mechanics of the transfer and rename, the development will continue with the regular crew.</p>
+</div>
+<div class="paragraph">
+<p>For the migration, two project repositories (rhq-metrics and rhq-metrics-openshift) will just be transferred to the Hawkular organization. The code from rhqm-charts was already moved to Hawkular, so we will just close the RHQ repository. We will have a follow up communication once all the infrastructure is in place under the new organization.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rhq_metrics_0_2_7_was_released_today">RHQ Metrics 0.2.7 was released today</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This release has mainly stability fixes and minor enhancements. The Keycloak integration was delayed and not part of this release (as announced in the planning notes). For more details checkout the Github release notes.</p>
+</div>
+<div class="paragraph">
+<p>Github Release:
+<a href="https://github.com/rhq-project/rhq-metrics/releases/tag/0.2.7" class="bare">https://github.com/rhq-project/rhq-metrics/releases/tag/0.2.7</a></p>
+</div>
+<div class="paragraph">
+<p>JBoss Nexus Maven artifacts:
+<a href="http://origin-repository.jboss.org/nexus/content/repositories/public/org/rhq/metrics/" class="bare">http://origin-repository.jboss.org/nexus/content/repositories/public/org/rhq/metrics/</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="openshift_cartridge_for_rhq_metrics_0_2_7">OpenShift Cartridge for RHQ Metrics 0.2.7</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The cartridge supports RHQ Metrics 0.2.7, 0.2.6, and 0.2.5. Just a reminder, the cartridge is the simplest and easiest way to get a public facing instance of RHQ Metrics in just a few minutes with a single command. The cartridge configures Cassandra, Wildfly, and RHQ Metrics (REST interface and UI console) to run in a single gear. For more details please visit the Github repository of the project.</p>
+</div>
+<div class="paragraph">
+<p>Sample command to create a new RHQ Metrics deployment:
+rhc app create test_app <a href="https://raw.githubusercontent.com/rhq-project/rhq-metrics-openshift/master/metadata/manifest.yml" class="bare">https://raw.githubusercontent.com/rhq-project/rhq-metrics-openshift/master/metadata/manifest.yml</a></p>
+</div>
+<div class="paragraph">
+<p>Github Repository:
+<a href="https://github.com/rhq-project/rhq-metrics-openshift" class="bare">https://github.com/rhq-project/rhq-metrics-openshift</a></p>
+</div>
+<div class="paragraph">
+<p>A big "Thank you!" goes to John Sanda, Mike Thompson, Heiko Rupp, and Thomas Segismont for their project contributions.</p>
+</div>
+<div class="paragraph">
+<p>Any discussion, suggestions or contributions are more than welcomed; so feel free to reply to this email or comment directly on the various forum threads.</p>
+</div>
+<div class="paragraph">
+<p>Thank you,
+Stefan Negrea</p>
+</div>
+</div>
+</div></p>
+            <br />
+            <hr /><br />
+            <br />
+
+
+
+
+    <a href=feed.xml><i class="fa fa-rss"></i> RSS Feed</a>
+</div>
+
 
 		</div>
 		<div id="push"></div>

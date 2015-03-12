@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Hawkular - About</title>
+    <title>Hawkular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -30,7 +30,7 @@
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
     <link rel="shortcut icon" href="favicon.ico">
   </head>
-  <body onload="prettyPrint()">
+  <body onload="prettyPrint()" data-spy="scroll" data-offset="80" data-target="#toc">
     <div id="wrap">
       <div class="dropup">
         <a class="tabnav-closed" href="#" id="tab">Red Hat</a>
@@ -56,136 +56,189 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Hawkular</a></li>
+            <li><a href="index.html">Hawkular</a></li>
             <li>
-              <a href="docs/#getting-started">Getting Started</a>
+              <a href="docs/user/getting-started.html">Getting
+                  Started</a>
             </li>
             <li class=""><a href="downloads.html">Downloads</a></li>
-            <li class="dropdown"><a href="docs">Documentation</a></li>
+            <li class="dropdown"><a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+              Documentation
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="docs/user/getting-started.html">User Documentation</a>
+              </li>
+              <li>
+                <a href="docs/dev/development.html">Developer Documentation</a>
+              </li>
+            </ul>
             <li class="dropdown"><a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
               Community
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
               <li>
-                <a href="community">Home</a>
+                <a href="community/index.html">Home</a>
+              </li>
+              <li>
+                <a href="community/join.html">Join</a>
               </li>
               <li>
                 <a href="license.html">License</a>
               </li>
               <li>
-                <a href="builds">CI Builds</a>
+                <a href="https://travis-ci.org/hawkular/hawkular/builds">CI Builds</a>
               </li>
             </ul></li>
-            <li class=""><a href="blog">Blog</a></li>
+            <li class=""><a href="blog.html">Blog</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="homepage">
-      <section class="main-banner">
+<div class="homepage">
+    <section class="main-banner">
         <div class="container">
-          <h1 class="fade-in-up one" id="largeText">
+          <h1 class="fade-in-up one">
             The Open Source
             <span>Monitoring and Management Platform</span>
           </h1>
           <div class="buttons fade-in two">
-            <a class="btn btn-primary btn-lg" href="https://github.com/hawkular/hawkular">Download Hawkular</a>
+            <!--<a class="btn btn-primary btn-lg" href="https://github.com/hawkular/hawkular">Download Hawkular</a>-->
             <a class="btn btn-default btn-lg" href="https://github.com/hawkular">View on GitHub</a>
           </div>
-          <p class="version fade-in three"><i class="fa fa-list-ul"></i>0.0.1.Alpha01 - 10 Feb 2015
-          </p>
-        </div>
-        <div id="datGui">
+          <!--<p class="version fade-in three"><i class="fa fa-list-ul"></i>0.0.1.Alpha01 - 10 Mar 2015
+          </p>-->
         </div>
       </section>
       <section class="boxes">
         <div class="row">
-          <div class="server-side box col-sm-4">
-            <div class="content">
-              <h3>React on various events</h3>
-              <p>Setup alerts and do your own stuff</p>
+            <div class="server-side box col-sm-4">
+                <div class="content">
+                    <h3>React on various events</h3>
+
+                    <p>Setup alerts and do your own stuff</p>
+                </div>
             </div>
-          </div>
-          <div class="services box col-sm-4">
-            <div class="content">
-              <h3>Monitoring ready to use</h3>
-              <p>Storage, security, push and more</p>
+            <div class="services box col-sm-4">
+                <div class="content">
+                    <h3>Monitoring ready to use</h3>
+                </div>
             </div>
-          </div>
-          <div class="cloud box col-sm-4">
-            <div class="content">
-              <h3>On-premise or in the cloud</h3>
-              <p>Also running on OpenShift</p>
+            <div class="cloud box col-sm-4">
+                <div class="content">
+                    <h3>On-premise or in the cloud</h3>
+
+                    <p>Will also run on OpenShift</p>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
-      <section class="description">
+    </section>
+    <section class="description">
         <p>
-          Hawkular provides a flexible and easy to use Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip you need.
+            Hawkular is a new Open Source monitoring solution. While it is under heavy development, this is
+            also a great time to <a href="/community/join.html" target="_blank">join the discussions</a> and
+            why not even <a href="https://github.com/hawkular" target="_blank">contribute</a>. We know it's
+            very rough at the moment and documentation is coming up but feel free to ask anything on
+            <a href="irc://irc.freenode.net/#hawkular" target="_blank">IRC</a> or by 
+            <a href="https://lists.jboss.org/mailman/listinfo/hawkular-dev" target="_blank">EMail</a>.
         </p>
-      </section>
-      <section class="main-features">
+    </section>
+    <section class="main-features">
         <div class="container">
-          <h2>Hawkular Features</h2>
-          <div class="row">
-            <ul>
-              <li class="col-md-3 col-sm-4">
-                <i class="fa fa-magic"></i>
-                <h4>Example Applications</h4>
-                <p>Ready to run dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-              </li>
-              <li class="col-md-3 col-sm-4">
-                <i class="fa fa-cloud"></i>
-                <h4>Metric Storage</h4>
-                <p>Flexible, scalable and high performance metric storage based on Cassandra.</p>
-              </li>
-              <li class="col-md-3 col-sm-4">
-                <i class="fa fa-table"></i>
-                <h4>Data Visualization</h4>
-                <p>View and manage your data in the management console, including real time updates.</p>
-              </li>
-              <li class="col-md-3 col-sm-4">
-                <i class="fa fa-lock"></i>
-                <h4>Security</h4>
-                <p>Out of the box Single Sign On (SSO) and Identity Management (IDM) with Keycloak.</p>
-              </li>
-              <li class="col-md-3 col-sm-4">
-                <i class="fa fa-mobile"></i>
-                <h4>Push Notifications</h4>
-                <p>Add Push Notifications to your applications with the Aerogear Unified Push Server (UPS).</p>
-              </li>
-              <li class="col-md-3 col-sm-4">
-                <i class="fa fa-globe"></i>
-                <h4>
-                  Killer Feature
-                  <span>(coming soon)</span>
-                </h4>
-                <p>This hilarious feature is a silver bullet to all third world problems.</p>
-              </li>
-              <li class="col-md-3 col-sm-4">
-                <i class="fa fa-code"></i>
-                <h4>
-                  Business Logic
-                  <span>(coming soon)</span>
-                </h4>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-              </li>
-              <li class="col-md-3 col-sm-4">
-                <i class="fa fa-dashboard"></i>
-                <h4>
-                  Analytics
-                  <span>(coming soon)</span>
-                </h4>
-                <p>Watch your application growth and performance with the Analytics dashboard.</p>
-              </li>
-            </ul>
-          </div>
+            <h2>Hawkular Features</h2>
+
+            <div class="row">
+                <ul>
+                    <li class="col-md-4 col-sm-3">
+                        <i class="fa fa-cloud"></i>
+                        <h4>Metric Storage</h4>
+
+                        <p>Flexible, scalable and high performance metric storage based on Cassandra.</p>
+                    </li>
+                    <li class="col-md-4 col-sm-3">
+                        <i class="fa fa-bell"></i>
+                        <h4>
+                            Alerting
+                            <span>(coming soon)</span>
+                        </h4>
+
+                        <p>Notify administrators of performance problems or other user defined conditions.</p>
+                    </li>
+                    <li class="col-md-4 col-sm-3">
+                        <i class="fa fa-sitemap"></i>
+                        <h4>
+                            Inventory
+                            <span>(coming soon)</span>
+                        </h4>
+
+                        <p>Keep track of the monitored topology and all the monitored resource metadata.</p>
+                    </li>
+                    <li class="col-md-4 col-sm-3">
+                        <i class="fa fa-heartbeat"></i>
+                        <h4>
+                            Pinger
+                            <span>(coming soon)</span>
+                        </h4>
+
+                        <p>Checks if given web is up and running by sending HTTP HEAD requests.</p>
+                    </li>
+
+                    <li class="col-md-4 col-sm-3">
+                        <i class="fa fa-bar-chart"></i>
+                        <h4>
+                            Metric Data Visualization
+                            <span>(coming soon)</span>
+                        </h4>
+
+                        <p>View and manage your data in the management console, including real time monitoring.</p>
+                    </li>
+
+                    <li class="col-md-4 col-sm-3">
+                        <i class="fa fa-mobile"></i>
+                        <h4>
+                            Push Notifications
+                            <span>(coming soon)</span>
+                        </h4>
+
+                        <p>As a result of Hawkular Alerts let Aerogear notify your smartphone when something went
+                            wrong.</p>
+                    </li>
+                    <li class="col-md-4 col-sm-3">
+                        <i class="fa fa-code"></i>
+                        <h4>
+                            Easily extensible
+                            <span>(coming soon)</span>
+                        </h4>
+
+                        <p>Write your own metric feed using curl and some Bash magic or use what we prepared for
+                            you.</p>
+                    </li>
+                    <li class="col-md-4 col-sm-3">
+                        <i class="fa fa-dashboard"></i>
+                        <h4>
+                            Analytics
+                            <span>(coming soon)</span>
+                        </h4>
+
+                        <p>Watch your application growth and performance with the Analytics dashboard.</p>
+                    </li>
+                    <li class="col-md-4 col-sm-3">
+                        <i class="fa fa-lock"></i>
+                        <h4>
+                            Security
+                            <span>(coming soon)</span>
+                        </h4>
+
+                        <p>Out of the box Single Sign On (SSO) and Identity Management (IDM) with Keycloak.</p>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </section>
-    </div>
+    </section>
+</div>
 
 		</div>
 		<div id="push"></div>
@@ -197,7 +250,6 @@
       </div>
     </div>
 
-
     <section class="redhat">
       <div class="container">
         <p class="text-center">
@@ -206,19 +258,22 @@
           </a>
         </p>
         <p class="muted credit">&copy; 2015 | Baked with <a href="http://jbake.org">JBake v2.3.2</a></p>
+    <p id="forkongithubp"><span id="forkongithub">
+      <a href="https://github.com/hawkular" class="bg-grey">
+        Fork me on GitHub
+      </a>
+    </span></p>
       </div>
     </section>
     
     <!-- javascript -->
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- js -->
-<script type="text/javascript" src="js/dat.gui.min.js"></script>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="js/jbossorg-tabzilla.js"></script>
     <script src="js/behavior.js"></script>
     <script src="js/prettify.js"></script>
-    
     
 <script type="text/javascript">
 
